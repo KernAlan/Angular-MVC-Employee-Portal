@@ -11,8 +11,8 @@ export class AddEditDepComponent implements OnInit {
   constructor(private service:SharedService) { }
 
   @Input() dep:any;
-  DepartmentId:string;
-  DepartmentName:string;
+  DepartmentId!: string;
+  DepartmentName!: string;
 
   ngOnInit(): void {
     this.DepartmentId=this.dep.DepartmentId;

@@ -12,7 +12,7 @@ export class ShowEmpComponent implements OnInit {
 
   EmployeeList:any=[];
 
-  ModalTitle:string;
+  ModalTitle!: string;
   ActivateAddEditEmpComp:boolean=false;
   emp:any;
 
@@ -33,14 +33,14 @@ export class ShowEmpComponent implements OnInit {
 
   }
 
-  editClick(item){
+  editClick(item: any){
     console.log(item);
     this.emp=item;
     this.ModalTitle="Edit Employee";
     this.ActivateAddEditEmpComp=true;
   }
 
-  deleteClick(item){
+  deleteClick(item: { EmployeeId: any; }){
     if(confirm('Are you sure??')){
       this.service.deleteEmployee(item.EmployeeId).subscribe(data=>{
         alert(data.toString());

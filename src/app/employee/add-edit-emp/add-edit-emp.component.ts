@@ -11,12 +11,12 @@ export class AddEditEmpComponent implements OnInit {
   constructor(private service:SharedService) { }
 
   @Input() emp:any;
-  EmployeeId:string;
-  EmployeeName:string;
-  Department:string;
-  DateOfJoining:string;
-  PhotoFileName:string;
-  PhotoFilePath:string;
+  EmployeeId!: string;
+  EmployeeName!: string;
+  Department!: string;
+  DateOfJoining!: string;
+  PhotoFileName!: string;
+  PhotoFilePath!: string;
 
   DepartmentsList:any=[];
 
@@ -62,7 +62,7 @@ export class AddEditEmpComponent implements OnInit {
   }
 
 
-  uploadPhoto(event){
+  uploadPhoto(event: { target: { files: any[]; }; }){
     var file=event.target.files[0];
     const formData:FormData=new FormData();
     formData.append('uploadedFile',file,file.name);
